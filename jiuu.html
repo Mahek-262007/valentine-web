@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        h1 { color: #d55294; margin-bottom: 20px; }
+        .gif { width: 220px; margin-bottom: 20px; border-radius: 10px; }
+        .buttons { display: flex; justify-content: center; gap: 20px; position: relative; height: 50px; }
+        button {
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; }
+        #noBtn { background-color: #71a6d5; color: white; position: absolute; left: 150px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Cute Cat GIF -->
+        <img src="https://media.tenor.com/3-4yTLEM2_QAAAAM/cute-cat.gif" alt="Cute Cat" class="gif">
+
+        <h1>Will you be my Valentine? 💖</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">Yes!</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.querySelector('.container').innerHTML = `
+                <img src="https://i.pinimg.com/originals/6e/07/b6/6e07b6a0be4552de8e19d561ef49eb2d.gif" class="gif">
+                <h1>Yay! I meow you! i love you! 🥰</h1>
+                <p>You are my forever valentine my Jitudiii</p>
+            `;
+        }
+    </script>
+</body>
+</html>
